@@ -6,7 +6,7 @@ pipeline {
                 echo 'Inside Checkout stage'
             }
         }
-        stage('Build'{
+        stage('Build'){
             steps{
                 echo 'Inside Build stage'
             }
