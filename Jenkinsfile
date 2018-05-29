@@ -10,7 +10,6 @@ pipeline {
             steps{
                 echo 'Inside Build stage'
             }
-        }
-              
+        }        
     } //end of stages
 } //end of pipeline
