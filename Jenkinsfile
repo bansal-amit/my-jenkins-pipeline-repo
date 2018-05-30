@@ -9,7 +9,7 @@ pipeline {
         }        
         stage('Test'){
             steps{
-                sh 'make check || true'
+                sh 'mvn -version || true'
                 junit '**/target/*.xml'
             }
         }
