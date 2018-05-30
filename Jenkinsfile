@@ -2,17 +2,19 @@ pipeline {
     
     agent any
     stages {
-        stage('Build'){
-            steps{
-                echo 'Build'
+        stage('Example'){
+            input{
+                message "Should we continue?"
+                ok "Yes, we should."
+                submitter "alice, bob"
+                parameters{
+                    name:'PERSON',defaultValue: 'Mr. Jenkins',description: 'Who should I say hello to?')
+                }
+                steps{
+                    echo "Hello, ${PERSON}, nice to meet you."
+                }
             }
         }        
-        stage('Test'){
-            def username = "Jenkins"
-            steps{
-                sh 'mvn -version || true'
-                echo "Hello Mrs. ${username}"
-            }
-        }
+        
     } //end of stages
 } //end of pipeline
