@@ -2,7 +2,6 @@ pipeline {
     
     agent any
     stages {
-        @field username = "Jenkins"
         stage('Build'){
             steps{
                 echo 'Build'
@@ -10,6 +9,7 @@ pipeline {
         }        
         stage('Test'){
             steps{
+                def username = "Jenkins"
                 sh 'mvn -version || true'
                 echo "Hello Mr. ${username}"
             }
