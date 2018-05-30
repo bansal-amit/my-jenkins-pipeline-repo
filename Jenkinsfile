@@ -8,8 +8,8 @@ pipeline {
             }
         }        
         stage('Test'){
+            def username = "Jenkins"
             steps{
-                def username = "Jenkins"
                 sh 'mvn -version || true'
                 echo "Hello Mrs. ${username}"
             }
