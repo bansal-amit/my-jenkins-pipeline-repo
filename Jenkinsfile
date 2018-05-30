@@ -1,15 +1,17 @@
 pipeline {
     agent any
     stages {
-        stage('Checkout') {
-            steps {
-                echo 'Inside Checkout stage'
-            }
-        }
         stage('Build'){
             steps{
-                echo 'Inside Build stage'
+                echo 'Build'
+                sh 'make'
             }
         }        
+        stage('Test'){
+            steps{
+                sh 'make check || true'
+                junit '**/target/*.xml'
+            }
+        }
     } //end of stages
 } //end of pipeline
