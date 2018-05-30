@@ -2,7 +2,7 @@ pipeline {
     
     agent any
     stages {
-        def username = "Jenkins"
+        field username = "Jenkins"
         stage('Build'){
             steps{
                 echo 'Build'
