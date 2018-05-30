@@ -2,7 +2,7 @@ pipeline {
     
     agent any
     stages {
-        field username = "Jenkins"
+        @field username = "Jenkins"
         stage('Build'){
             steps{
                 echo 'Build'
