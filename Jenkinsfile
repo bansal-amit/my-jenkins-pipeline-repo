@@ -11,7 +11,7 @@ pipeline {
             steps{
                 def username = "Jenkins"
                 sh 'mvn -version || true'
-                echo "Hello Mr. ${username}"
+                echo "Hello Mrs. ${username}"
             }
         }
     } //end of stages
