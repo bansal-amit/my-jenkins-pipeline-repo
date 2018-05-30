@@ -6,13 +6,12 @@ pipeline {
         stage('Build'){
             steps{
                 echo 'Build'
-                def username = "Testing"
             }
         }        
         stage('Test'){
             steps{
                 sh 'mvn -version || true'
-                echo "Hello Mr. ${Testing}"
+                echo "Hello Mr. ${username}"
             }
         }
     } //end of stages
