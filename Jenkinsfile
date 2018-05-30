@@ -3,9 +3,11 @@ pipeline {
     agent any
     stages {
         stage('Example'){
+            input{
+                message "Should we continue?"
+            }
             steps{
                 echo "${BUILD_NUMBER}"
-                echo "${BRANCH_NAME}"
             }
         }
         }           
