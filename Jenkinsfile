@@ -12,8 +12,8 @@ pipeline {
             }
         }
         stage('Build'){
-            steps{
                 def username = 'Jenkins'
+            steps{
                 echo 'Building'
                 echo currentBuild.result
                 echo 'Hello Mr. ${username}'
