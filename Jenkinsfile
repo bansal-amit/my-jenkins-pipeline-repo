@@ -11,5 +11,8 @@ pipeline {
                 echo "${BUILD_NUMBER}"
             }
         }
+        stage('Build'){
+            echo 'Building'
+        }
         }           
     } //end of pipeline
