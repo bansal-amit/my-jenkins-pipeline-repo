@@ -12,13 +12,11 @@ pipeline {
             }
         }
         stage('Build'){
-                def username = 'Jenkins'
             steps{
                 echo 'Building'
                 echo currentBuild.result
-                echo 'Hello Mr. ${username}'
-                echo "I said, Hello Mr. ${username}"
-            }
+                echo "${env.JOB_NAME}"
+                echo ${env.JOB_NAME}
         }
     } //end of stages
     post{
