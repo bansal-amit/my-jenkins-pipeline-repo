@@ -1,6 +1,9 @@
 pipeline {
     
     agent any
+    environment{
+        AWS_SECRET_KEY_ID = credentials('aws_secret_key_ID')
+    }
     stages {
         stage('Example'){
             input{
@@ -16,6 +19,7 @@ pipeline {
                 echo 'Building'
                 echo currentBuild.result
                 echo "${env.JOB_NAME}"
+                echo "$AWS_SECRET_KEY_ID"
             }
         }
     }
