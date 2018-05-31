@@ -12,7 +12,9 @@ pipeline {
             }
         }
         stage('Build'){
-            echo 'Building'
+            steps{
+                echo 'Building'
+            }
         }
         }           
     } //end of pipeline
