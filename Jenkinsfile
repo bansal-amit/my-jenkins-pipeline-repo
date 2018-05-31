@@ -14,7 +14,13 @@ pipeline {
         stage('Build'){
             steps{
                 echo 'Building'
+                echo currentBuild.result
             }
         }
-        }           
+    } //end of stages
+    post{
+        success{
+            echo 'Good going!'
+        }
+    }           
     } //end of pipeline
