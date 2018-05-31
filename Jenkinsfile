@@ -17,7 +17,7 @@ pipeline {
                 echo currentBuild.result
                 echo "${env.JOB_NAME}"
                 echo ${env.JOB_NAME}
-        }
+            }
         }
         post{
             success{
