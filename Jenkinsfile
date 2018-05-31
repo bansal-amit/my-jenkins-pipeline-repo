@@ -19,10 +19,10 @@ pipeline {
                 echo ${env.JOB_NAME}
             }
         }
-        post{
-            success{
-                echo 'Good going!'
-            }
-        }     
-    } //end of stages      
+    }
+    post{
+        success{
+            echo 'Good going!'
+        }
+    }          
     } //end of pipeline
