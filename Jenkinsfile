@@ -16,7 +16,6 @@ pipeline {
                 echo 'Building'
                 echo currentBuild.result
                 echo "${env.JOB_NAME}"
-                echo ${env.JOB_NAME}
             }
         }
     }
