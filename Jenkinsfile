@@ -2,7 +2,7 @@ pipeline {
     
     agent any
     environment{
-        AWS_SECRET_KEY_ID = credentials('awsSecretKeyID')
+        AWS_SECRET_KEY_ID = credentials('amitb1126@gmail.com')
     }
     stages {
         stage('Example'){
