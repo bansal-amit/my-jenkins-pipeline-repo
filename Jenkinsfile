@@ -28,7 +28,7 @@ pipeline {
         stage('DEV Approve'){
             steps{
                 echo "Taking approval from DEV"
-                timeout(time: 60,unit:'MINS'){
+                timeout(time: 60,unit:'MINUTES'){
                 input message: 'Do you want to deplo?', submitter:'admin'
                 }
             }
