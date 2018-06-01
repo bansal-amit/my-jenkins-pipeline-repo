@@ -20,6 +20,16 @@ pipeline {
                 //echo "${AWS_SECRET_KEY_ID}"
             }
         }
+        stage('DEV Deploy'){
+            echo "deployin to DEV tomcat"
+        }
+        stage('DEV Approve'){
+            echo "Taking approval from DEV"
+            timeout(time: 60,unit:'MINS'){
+                input message: 'Do you want to deplo?', submitter:'admin'
+            }
+            }
+        }
     }
     post{
         success{
