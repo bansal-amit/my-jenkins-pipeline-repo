@@ -12,6 +12,7 @@ pipeline {
             }
             steps{
                 echo "${BUILD_NUMBER}"
+                echo "testing integration"
             }
         }
         stage('Build'){
@@ -25,6 +26,7 @@ pipeline {
         stage('DEV Deploy'){
             steps{
                 echo "deployin to DEV tomcat"
+                params.Greeting = "Namaste"
                 echo "${params.Greeting}"
             }
         }
