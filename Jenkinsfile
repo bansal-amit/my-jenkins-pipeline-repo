@@ -23,6 +23,7 @@ pipeline {
         stage('DEV Deploy'){
             steps{
                 echo "deployin to DEV tomcat"
+                echo "${env.Greeting}"
             }
         }
         stage('DEV Approve'){
