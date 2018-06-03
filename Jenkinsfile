@@ -1,11 +1,12 @@
 pipeline {
     
-    agent any
+    agent none
     parameters {
         string(name:'Greeting' , defaultValue:'Hello' , description:'How should I greet the world?')
     }
     stages {
         stage('Example'){
+            agent any
             input{
                 message "Should we continue?"
                 ok "Yes, we should"
@@ -16,6 +17,7 @@ pipeline {
             }
         }
         stage('Build'){
+            agent any
             steps{
                 echo 'Building'
                 echo currentBuild.result
@@ -23,11 +25,23 @@ pipeline {
                 //echo "${AWS_SECRET_KEY_ID}"
             }
         }
-        stage('DEV Deploy'){
+        stage('Test on Linux'){
+            agent {
+                    label 'linux'
+            }
             steps{
+                echo "using linux agent"
                 echo "deployin to DEV tomcat"
                 params.Greeting = "Namaste"
                 echo "${params.Greeting}"
+            }
+        }
+        stage('Test on Windows'){
+            agent {
+                label 'windows'
+            }
+            steps{
+                echo "on windows agent"
             }
         }
         stage('DEV Approve'){
