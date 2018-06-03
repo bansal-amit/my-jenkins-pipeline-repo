@@ -2,7 +2,7 @@
 
 #!groovy
 
-node {
+node ('Builder'){
     stage('Build') {
         checkout scm
         echo 'Building....'
