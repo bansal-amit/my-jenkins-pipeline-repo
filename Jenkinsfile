@@ -68,7 +68,7 @@
 
     //----------------------------------- start of Scripted pipeline -------------------------------------------------------
 
-node ('Jenkins'){
+node ('master'){
     stage('Build') {
         echo 'Building....'
     }
