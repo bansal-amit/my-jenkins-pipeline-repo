@@ -32,7 +32,7 @@ pipeline {
             steps{
                 echo "using linux agent"
                 echo "deployin to DEV tomcat"
-                params.Greeting = "Namaste"
+                ${params.Greeting} = "Namaste"
                 echo "${params.Greeting}"
             }
         }
