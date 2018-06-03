@@ -68,10 +68,6 @@
 
     //----------------------------------- start of Scripted pipeline -------------------------------------------------------
 
-    
-
-#!/usr/bin/env groovy
-
 node ('Builder'){
     stage('Build') {
         echo 'Building....'
