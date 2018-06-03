@@ -1,4 +1,4 @@
-pipeline {
+/* pipeline {
     
     agent none
     parameters {
@@ -57,4 +57,30 @@ pipeline {
             echo 'Good going!'
         }
     }          
-    } //end of pipeline
+    } //end of pipeline */
+
+
+
+
+
+
+
+
+    //----------------------------------- start of Scripted pipeline -------------------------------------------------------
+
+    
+
+#!/usr/bin/env groovy
+
+node ('Builder'){
+    stage('Build') {
+        echo 'Building....'
+    }
+    stage('Test') {
+        echo 'Testing....'
+    }
+    stage('Deploy') {
+        echo 'Deploying....'
+        echo "Running ${env.BUILD_ID} on ${JENKINS_URL}"
+    }
+}
