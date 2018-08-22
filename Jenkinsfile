@@ -70,12 +70,15 @@
 
 node ('master'){
     stage('Build') {
+        echo 'In Build stage'
         echo 'Building....'
     }
     stage('Test') {
+        echo 'In Test stage'
         echo 'Testing....'
     }
     stage('Deploy') {
+        echo 'In Deploy stage'
         echo 'Deploying....'
         echo "Running ${env.BUILD_ID} on ${JENKINS_URL}"
     }
