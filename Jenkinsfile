@@ -68,7 +68,7 @@
 
     //----------------------------------- start of Scripted pipeline -------------------------------------------------------
 
-/* node ('master'){
+node ('master'){
     stage('Build') {
         echo 'Building....'
     }
@@ -80,10 +80,11 @@
         echo "Running ${env.BUILD_ID} on ${JENKINS_URL}"
     }
 }
- */
+ 
 
 //----------------------------------- scripted pipeline using docker -------------------------------------------------------
 
+/* 
 node ('master'){
     docker.image('node:7-alpine').inside{
         stage('Test'){
@@ -91,4 +92,5 @@ node ('master'){
         }
     }
     
-}
+} 
+*/
