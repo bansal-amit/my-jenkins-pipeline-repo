@@ -76,7 +76,7 @@ node ('master'){
     stage('Test') {
         echo 'In Test stage'
         echo 'Testing....'
-        echo currentBuild.result
+        echo ${currentBuild.result}
     }
     stage('Deploy') {
         echo 'In Deploy stage'
