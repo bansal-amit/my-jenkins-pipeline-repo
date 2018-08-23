@@ -74,9 +74,10 @@ node ('master'){
         echo 'Building....'
     }
     stage('Test') {
+        def buildresult = currentBuild.result
         echo 'In Test stage'
         echo 'Testing....'
-        echo "${currentBuild.result}"
+        echo buildresult
     }
     stage('Deploy') {
         echo 'In Deploy stage'
