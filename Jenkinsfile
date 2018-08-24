@@ -72,7 +72,6 @@ node ('master'){
     stage('Build') {
         echo 'In Build stage'
         echo 'Building....'
-        sh 'mvn clean'
     }
     stage('Test') {
         parallel linux: {
