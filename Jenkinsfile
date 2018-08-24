@@ -75,10 +75,17 @@ node ('master'){
         sh 'mvn clean'
     }
     stage('Test') {
-        def buildresult = currentBuild.result
-        echo 'In Test stage'
-        echo 'Testing....'
-        echo buildresult
+        parallel linux: {
+            node('linux'){
+                checkout scm
+                echo 'using linux node'
+            }
+        },
+            windows: {
+                node('windows'){
+                    echo 'using windows node'
+                }
+            }
     }
     stage('Deploy') {
         echo 'In Deploy stage'
