@@ -66,8 +66,22 @@
 
 
 
-    //----------------------------------- start of Scripted pipeline -------------------------------------------------------
+//----------------------------------- start of Scripted pipeline -------------------------------------------------------
+  
+// scripted pipeline using docker images
+    
 
+node {
+    /* Requires the Docker Pipeline plugin to be installed */
+    docker.image('node:7-alpine').inside {
+        stage('Test') {
+            sh 'node --version'
+        }
+    }
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+/*
 node ('master'){
     stage('Build') {
         echo 'In Build stage'
@@ -92,6 +106,7 @@ node ('master'){
         echo "Running ${env.BUILD_ID} on ${JENKINS_URL}"
     }
 }
+*/
  
 
 //----------------------------------- scripted pipeline using docker -------------------------------------------------------
